@@ -47,9 +47,11 @@ export default function Skills() {
       >
         <div className="space-y-20">
           <SkillsSection title="Languages">
-            <Skill title="HTML">
-              The foundation of the web. Understanding semantic HTML and how to
-              best use it to aid in accessibility is an often overlooked skill.
+            <Skill title="C#">
+              Microsoft's Java challenger, C# has been around for a long time
+              and continues to improve with every release. When combined with
+              .NET you gain an impressive developer experience and a powerful
+              ecosystem.
             </Skill>
             <Skill title="CSS">
               Most of the work I do when it comes to styling things is done with{' '}
@@ -66,26 +68,24 @@ export default function Skills() {
               </a>
               .
             </Skill>
-            <Skill title="JavaScript">
-              JavaScript has permeated the web, mobile, and desktop applications
-              either through the browser directly, on the server, or through a
-              bridge to the native platform.
-            </Skill>
-            <Skill title="TypeScript">
-              My preferred language for writing code, TypeScript is a superset
-              of JavaScript that adds static typing and makes it easier to build
-              easy-to-understand applications.
-            </Skill>
             <Skill title="Elixir">
               Elixir runs on the Erlang VM and is one of the most pleasurable
               functional programming languages around. It's easy to understand
               and has a friendly community.
             </Skill>
-            <Skill title="C#">
-              Microsoft's Java challenger, C# has been around for a long time
-              and continues to improve with every release. When combined with
-              .NET you gain an impressive developer experience and a powerful
-              ecosystem.
+            <Skill title="HTML">
+              The foundation of the web. Understanding semantic HTML and how to
+              best use it to aid in accessibility is an often overlooked skill.
+            </Skill>
+            <Skill title="JavaScript">
+              JavaScript has permeated the web, mobile, and desktop applications
+              either through the browser directly, on the server, or through a
+              bridge to the native platform.
+            </Skill>
+            <Skill title="MongoDB">
+              Though not a language, I opted to include Mongo here alongside
+              SQL. I have a lot of experience working with MongoDB, including
+              writing aggregate pipelines and using change streams.
             </Skill>
             <Skill title="PHP">
               Often considered the laughing stock of the programming world, PHP
@@ -96,6 +96,11 @@ export default function Skills() {
               While ORMs exist, sometimes you just need to write some SQL. I
               often find myself writing raw SQL queries to optimize performance
               or build complex queries.
+            </Skill>
+            <Skill title="TypeScript">
+              My preferred language for writing code, TypeScript is a superset
+              of JavaScript that adds static typing and makes it easier to build
+              easy-to-understand applications.
             </Skill>
           </SkillsSection>
           <SkillsSection title="Libraries">
@@ -225,6 +230,11 @@ export default function Skills() {
               that I use on Mac as well as in Ubuntu (WSL). It has a large
               community of users and a lot of plugins to extend its
               functionality.
+            </Skill>
+            <Skill title="MongoDB Compass">
+              Compass is the official GUI for interacting with MongoDB. It has a
+              brilliant visual editor for creating aggregates/pipelines allowing
+              you to preview the results of every step.
             </Skill>
             <Skill title="Photoshop">
               While not related to programming, Photoshop is a tool that I find
