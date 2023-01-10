@@ -3,11 +3,11 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { Fragment, useEffect, useRef } from 'react';
 
 import { Container } from '@/components/Container';
 import avatarImage from '@/images/avatar.jpg';
 import { type NavigationItemProps } from '@/types';
-import { Fragment, useEffect, useRef } from 'react';
 
 function CloseIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -137,7 +137,7 @@ function MobileNavigation(props: any) {
 }
 
 function NavItem({ href, children }: NavigationItemProps) {
-  let isActive = useRouter().pathname === href;
+  const isActive = useRouter().pathname === href;
 
   return (
     <li>
@@ -187,9 +187,11 @@ function ModeToggle() {
   function toggleMode() {
     disableTransitionsTemporarily();
 
-    let darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    let isSystemDarkMode = darkModeMediaQuery.matches;
-    let isDarkMode = document.documentElement.classList.toggle('dark');
+    const darkModeMediaQuery = window.matchMedia(
+      '(prefers-color-scheme: dark)'
+    );
+    const isSystemDarkMode = darkModeMediaQuery.matches;
+    const isDarkMode = document.documentElement.classList.toggle('dark');
 
     if (isDarkMode === isSystemDarkMode) {
       delete window.localStorage.isDarkMode;
@@ -212,8 +214,9 @@ function ModeToggle() {
 }
 
 function clamp(number: number, a: number, b: number) {
-  let min = Math.min(a, b);
-  let max = Math.max(a, b);
+  const min = Math.min(a, b);
+  const max = Math.max(a, b);
+
   return Math.min(Math.max(number, min), max);
 }
 
@@ -258,15 +261,15 @@ function Avatar({ large = false, className, ...props }: AvatarProps) {
 }
 
 export function Header() {
-  let isHomePage = useRouter().pathname === '/';
+  const isHomePage = useRouter().pathname === '/';
 
-  let headerRef = useRef<HTMLDivElement>(null);
-  let avatarRef = useRef<HTMLDivElement>(null);
-  let isInitial = useRef(true);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const avatarRef = useRef<HTMLDivElement>(null);
+  const isInitial = useRef(true);
 
   useEffect(() => {
-    let downDelay = avatarRef.current?.offsetTop ?? 0;
-    let upDelay = 64;
+    const downDelay = avatarRef.current?.offsetTop ?? 0;
+    const upDelay = 64;
 
     function setProperty(property: string, value: string | number) {
       document.documentElement.style.setProperty(property, value.toString());
@@ -277,8 +280,10 @@ export function Header() {
     }
 
     function updateHeaderStyles() {
-      let { top, height } = headerRef.current.getBoundingClientRect();
-      let scrollY = clamp(
+      if (!headerRef.current) return;
+
+      const { top, height } = headerRef.current.getBoundingClientRect();
+      const scrollY = clamp(
         window.scrollY,
         0,
         document.body.scrollHeight - window.innerHeight
@@ -318,12 +323,12 @@ export function Header() {
         return;
       }
 
-      let fromScale = 1;
-      let toScale = 36 / 64;
-      let fromX = 0;
-      let toX = 2 / 16;
+      const fromScale = 1;
+      const toScale = 36 / 64;
+      const fromX = 0;
+      const toX = 2 / 16;
 
-      let scrollY = downDelay - window.scrollY;
+      const scrollY = downDelay - window.scrollY;
 
       let scale = (scrollY * (fromScale - toScale)) / downDelay + toScale;
       scale = clamp(scale, fromScale, toScale);
@@ -336,9 +341,9 @@ export function Header() {
         `translate3d(${x}rem, 0, 0) scale(${scale})`
       );
 
-      let borderScale = 1 / (toScale / scale);
-      let borderX = (-toX + x) * borderScale;
-      let borderTransform = `translate3d(${borderX}rem, 0, 0) scale(${borderScale})`;
+      const borderScale = 1 / (toScale / scale);
+      const borderX = (-toX + x) * borderScale;
+      const borderTransform = `translate3d(${borderX}rem, 0, 0) scale(${borderScale})`;
 
       setProperty('--avatar-border-transform', borderTransform);
       setProperty('--avatar-border-opacity', scale === toScale ? 1 : 0);

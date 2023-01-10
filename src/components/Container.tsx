@@ -1,9 +1,9 @@
-import clsx from 'clsx'
-import { forwardRef } from 'react'
+import clsx from 'clsx';
+import { forwardRef } from 'react';
 
 interface ContainerProps {
-  children: React.ReactNode
-  className?: string
+  children: React.ReactNode;
+  className?: string;
 }
 
 const OuterContainer = forwardRef<HTMLDivElement, ContainerProps>(
@@ -12,9 +12,9 @@ const OuterContainer = forwardRef<HTMLDivElement, ContainerProps>(
       <div ref={ref} className={clsx('sm:px-8', className)} {...props}>
         <div className="mx-auto max-w-7xl lg:px-8">{children}</div>
       </div>
-    )
+    );
   }
-)
+);
 
 const InnerContainer = forwardRef<HTMLDivElement, ContainerProps>(
   function InnerContainer({ className, children, ...props }, ref) {
@@ -26,9 +26,9 @@ const InnerContainer = forwardRef<HTMLDivElement, ContainerProps>(
       >
         <div className="mx-auto max-w-2xl lg:max-w-5xl">{children}</div>
       </div>
-    )
+    );
   }
-)
+);
 
 export const Container = forwardRef<HTMLDivElement>(function Container(
   { children, ...props }: Partial<ContainerProps>,
@@ -38,8 +38,8 @@ export const Container = forwardRef<HTMLDivElement>(function Container(
     <OuterContainer ref={ref} {...props}>
       <InnerContainer>{children}</InnerContainer>
     </OuterContainer>
-  )
-}) as any
+  );
+}) as any;
 
-Container.Outer = OuterContainer
-Container.Inner = InnerContainer
+Container.Outer = OuterContainer;
+Container.Inner = InnerContainer;

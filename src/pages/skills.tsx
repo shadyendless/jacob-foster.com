@@ -108,6 +108,10 @@ export default function Skills() {
               Framer Motion makes coordinating complex animations across an
               application easy and determinative.
             </Skill>
+            <Skill title="Headless UI">
+              Headless UI is a collection of accessible, reusable, and fully
+              customizable UI components.
+            </Skill>
             <Skill title="Lodash">
               Lodash has been around for a long time and for good reason. It
               provides a lot of utility functions for working with arrays,

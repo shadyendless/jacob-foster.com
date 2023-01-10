@@ -34,7 +34,7 @@ export function ArticleLayout({
   previousPathname,
   previousLabel = 'Go back to articles',
 }: ArticleLayoutProps) {
-  let router = useRouter();
+  const router = useRouter();
 
   if (isRssFeed) {
     return children;
