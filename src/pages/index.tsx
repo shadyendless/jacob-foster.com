@@ -105,14 +105,14 @@ function Resume() {
       end: '2019',
     },
     {
-      company: 'Common Tongue, Inc',
+      company: 'Common Tongue, Inc.',
       title: 'Director of Design',
       logo: `https://source.boringavatars.com/marble/120/Common%20Tongue,%20Inc?colors=F43F5E,EAB308,22C55E,3B82F6,A855F7`,
       start: '2015',
       end: '2017',
     },
     {
-      company: 'UniverCity, Inc',
+      company: 'UniverCity, Inc.',
       title: 'Lead Engineer',
       logo: `https://source.boringavatars.com/marble/120/UniverCity,%20Inc?colors=F43F5E,EAB308,22C55E,3B82F6,A855F7`,
       start: '2013',

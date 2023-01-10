@@ -20,6 +20,10 @@ function usePrevious(value: any) {
 export default function App({ Component, pageProps, router }: AppProps) {
   let previousPathname = usePrevious(router.pathname);
 
+  if (Component.displayName === 'ResumePage') {
+    return <Component />;
+  }
+
   return (
     <>
       <div className="fixed inset-0 flex justify-center sm:px-8">
