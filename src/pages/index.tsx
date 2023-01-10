@@ -193,7 +193,8 @@ export default function Home({ articles }: { articles: Meta[] }) {
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
             Hey there, I'm Jacob. I lived in Japan for 1.5 years and moved to
             Reno in October, 2021. I am currently looking for opportunities
-            anywhere in the United States and am willing to relocate.
+            anywhere in the United States and am willing to relocate or work for
+            a fully remote team.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink

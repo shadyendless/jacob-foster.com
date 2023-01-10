@@ -42,7 +42,7 @@ export default function Skills() {
         />
       </Head>
       <SimpleLayout
-        title="A collection of the skills I use to craft experiences"
+        title="A collection of the skills and tools I use to craft experiences"
         intro="I am well-versed in a lot of different languages, libraries, frameworks, and applications. Here's a categorized list of what I use to solve problems. As a lifelong learner, this list is always growing and changing alongside myself."
       >
         <div className="space-y-20">

@@ -63,7 +63,7 @@ export default function Projects() {
       </Head>
       <SimpleLayout
         title="What I've built so far"
-        intro="I tend to chase my passions and build things for companies that align with my goals. Below are some of the things I've made over the years. Click on any project to see more details about my role."
+        intro="I tend to chase my passions and build things for companies that align with my goals or challenge my abilities. Below are some of the things I've made over the years. Click on any project to see more details about my role."
       >
         <ul
           role="list"
