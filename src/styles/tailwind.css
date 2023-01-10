@@ -1,0 +1,31 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import './prism.css';
+@import 'tailwindcss/utilities';
+
+.proud-underline {
+  @apply relative;
+}
+
+.proud-underline > span {
+  @apply relative;
+}
+
+.proud-underline::before {
+  @apply absolute bottom-1 left-0 right-0 h-1 skew-x-[-60deg] transform-gpu;
+  background: rgb(255, 0, 0);
+  background: linear-gradient(
+    90deg,
+    #f43f5e 0%,
+    #f97316 20%,
+    #eab308 40%,
+    #22c55e 60%,
+    #3b82f6 80%,
+    #a855f7 100%
+  );
+  content: ' ';
+}
+
+.site-link {
+  @apply font-bold text-indigo-500 underline decoration-indigo-500/20 transition hover:decoration-indigo-500 dark:text-indigo-400 dark:decoration-indigo-400/30 dark:hover:decoration-indigo-400;
+}
