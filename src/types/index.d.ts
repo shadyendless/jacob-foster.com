@@ -9,4 +9,5 @@ export type Meta = {
 export interface NavigationItemProps {
   children: React.ReactNode;
   href: string;
+  target?: string;
 }

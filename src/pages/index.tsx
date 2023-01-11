@@ -13,8 +13,6 @@ import {
 } from '@/components/SocialIcons';
 import logoNativShark from '@/images/logos/nativshark.png';
 import { formatDate } from '@/lib/formatDate';
-import { generateRssFeed } from '@/lib/generateRssFeed';
-import { getAllArticles } from '@/lib/getAllArticles';
 import { type Meta } from '@/types';
 
 function BriefcaseIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -161,9 +159,14 @@ function Resume() {
           </li>
         ))}
       </ol>
-      <Button href="#" variant="secondary" className="group mt-6 w-full">
-        Download CV
-        <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" />
+      <Button
+        href="/resume"
+        target="_blank"
+        variant="secondary"
+        className="group mt-6 w-full"
+      >
+        View Resume
+        {/* <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" /> */}
       </Button>
     </div>
   );
@@ -220,15 +223,14 @@ export default function Home({ articles }: { articles: Meta[] }) {
           </div>
         </div>
       </Container>
-      {/* <Photos /> */}
       <Container className="mt-24 md:mt-28">
-        <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none lg:grid-cols-2">
-          <div className="flex flex-col gap-16">
+        <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none">
+          {/* <div className="flex flex-col gap-16">
             {articles.map((article) => (
               <Article key={article.slug} article={article} />
             ))}
-          </div>
-          <div className="space-y-10 lg:pl-16 xl:pl-24">
+          </div> */}
+          <div className="space-y-10">
             <Resume />
           </div>
         </div>
@@ -239,14 +241,14 @@ export default function Home({ articles }: { articles: Meta[] }) {
 
 export async function getStaticProps() {
   if (process.env.NODE_ENV === 'production') {
-    await generateRssFeed();
+    // await generateRssFeed();
   }
 
   return {
     props: {
-      articles: (await getAllArticles())
-        .slice(0, 4)
-        .map(({ component, ...meta }) => meta),
+      // articles: (await getAllArticles())
+      //   .slice(0, 4)
+      //   .map(({ component, ...meta }) => meta),
     },
   };
 }

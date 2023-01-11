@@ -12,6 +12,7 @@ interface ButtonProps {
   children: React.ReactNode;
   className?: string;
   href?: string;
+  target?: string;
   variant?: 'primary' | 'secondary';
 }
 

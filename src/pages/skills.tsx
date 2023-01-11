@@ -82,6 +82,12 @@ export default function Skills() {
               either through the browser directly, on the server, or through a
               bridge to the native platform.
             </Skill>
+            <Skill title="Kafka">
+              Kafka is one of the most popular event streaming platforms for
+              coordinating large, distributed systems. Due to its easy-to-grok
+              API, many developers find working with it to be pleasant. Cluster
+              management can be a bit of a pain, though.
+            </Skill>
             <Skill title="MongoDB">
               Though not a language, I opted to include Mongo here alongside
               SQL. I have a lot of experience working with MongoDB, including

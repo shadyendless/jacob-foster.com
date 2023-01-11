@@ -105,7 +105,7 @@ export default function About() {
                 challening myself to learn new technologies, paradigms, and
                 techniques along the way.
               </p>
-              <p>
+              {/* <p>
                 You can see{' '}
                 <a className="site-link" href="/projects">
                   some projects that I've decided to highlight
@@ -123,7 +123,7 @@ export default function About() {
                   an assortment of technologies and skills
                 </a>{' '}
                 that I use to craft experiences.
-              </p>
+              </p> */}
               <p>
                 I'd love to work with your team to help push your product to the
                 next level or to realize a product that you think the world

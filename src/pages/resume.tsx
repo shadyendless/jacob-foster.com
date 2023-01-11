@@ -22,7 +22,7 @@ const keyQualifications: string[] = [
   `Project Management`,
   `Concise Communication`,
   `Training and Mentorship`,
-  `Data Transformation`,
+  `TypeScript and React`,
   `Systems Integration`,
   `Test-Driven Development`,
   `Serverless Architecture`,
@@ -30,7 +30,7 @@ const keyQualifications: string[] = [
   `Database Design`,
   `Clean Code Principles`,
   `CI/CD`,
-  `Requirements Gathering`,
+  `Event-Driven Architecture`,
 ];
 
 const employments: Employment[] = [
@@ -121,7 +121,7 @@ function ResumePage() {
         <div className="flex items-center justify-center gap-x-2 text-xs">
           <a href="mailto:me@jacob-foster.com">me@jacob-foster.com</a>
           <span>|</span>
-          <a href="https://linkedin.com/in/imjacobf/">/in/imjacobf</a>
+          <a href="https://www.jacob-foster.com">www.jacob-foster.com</a>
           <span>|</span>
           <span>phone on request</span>
         </div>

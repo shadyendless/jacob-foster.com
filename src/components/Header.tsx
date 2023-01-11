@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 import { Fragment, useEffect, useRef } from 'react';
 
 import { Container } from '@/components/Container';
-import avatarImage from '@/images/avatar.jpg';
+import avatarImage from '@/images/avatar.png';
 import { type NavigationItemProps } from '@/types';
 
 function CloseIcon(props: React.SVGProps<SVGSVGElement>) {
@@ -70,10 +70,15 @@ function MoonIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-function MobileNavItem({ href, children }: NavigationItemProps) {
+function MobileNavItem({ href, children, target }: NavigationItemProps) {
   return (
     <li>
-      <Popover.Button as={Link} href={href} className="block py-2">
+      <Popover.Button
+        as={Link}
+        href={href}
+        target={target}
+        className="block py-2"
+      >
         {children}
       </Popover.Button>
     </li>
@@ -123,10 +128,13 @@ function MobileNavigation(props: any) {
             <nav className="mt-6">
               <ul className="-my-2 divide-y divide-zinc-100 text-base text-zinc-800 dark:divide-zinc-100/5 dark:text-zinc-300">
                 <MobileNavItem href="/about">About</MobileNavItem>
-                <MobileNavItem href="/articles">Articles</MobileNavItem>
-                <MobileNavItem href="/projects">Projects</MobileNavItem>
-                <MobileNavItem href="/languages">Languages</MobileNavItem>
+                {/* <MobileNavItem href="/articles">Articles</MobileNavItem> */}
+                {/* <MobileNavItem href="/projects">Projects</MobileNavItem> */}
+                {/* <MobileNavItem href="/languages">Languages</MobileNavItem> */}
                 <MobileNavItem href="/skills">Skills</MobileNavItem>
+                <MobileNavItem href="/resume" target="_blank">
+                  Resume
+                </MobileNavItem>
               </ul>
             </nav>
           </Popover.Panel>
@@ -136,13 +144,14 @@ function MobileNavigation(props: any) {
   );
 }
 
-function NavItem({ href, children }: NavigationItemProps) {
+function NavItem({ href, children, target }: NavigationItemProps) {
   const isActive = useRouter().pathname === href;
 
   return (
     <li>
       <Link
         href={href}
+        target={target}
         className={clsx(
           'relative block px-3 py-2 transition',
           isActive
@@ -166,10 +175,13 @@ function DesktopNavigation(
     <nav {...props}>
       <ul className="flex rounded-full bg-white/75 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/80 dark:text-zinc-200 dark:ring-white/10">
         <NavItem href="/about">About</NavItem>
-        <NavItem href="/articles">Articles</NavItem>
-        <NavItem href="/projects">Projects</NavItem>
-        <NavItem href="/languages">Languages</NavItem>
         <NavItem href="/skills">Skills</NavItem>
+        <NavItem href="/resume" target="_blank">
+          Resume
+        </NavItem>
+        {/* <NavItem href="/articles">Articles</NavItem> */}
+        {/* <NavItem href="/projects">Projects</NavItem> */}
+        {/* <NavItem href="/languages">Languages</NavItem> */}
       </ul>
     </nav>
   );
