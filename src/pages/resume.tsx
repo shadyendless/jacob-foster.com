@@ -118,12 +118,12 @@ function ResumePage() {
       </Head>
       <div className="mx-auto mt-4 mb-6 w-full max-w-[44rem] px-3 font-ibm-plex-serif text-sm print:px-0 print:font-sans">
         <div className="text-center font-bold">Jacob Foster</div>
-        <div className="flex items-center justify-center gap-x-2 text-xs">
+        <div className="flex flex-wrap justify-center gap-x-2 text-center text-xs print:flex-row print:items-center md:flex-row md:items-center">
           <a href="mailto:me@jacob-foster.com">me@jacob-foster.com</a>
-          <span>|</span>
+          <span className="hidden print:inline md:inline">|</span>
           <a href="https://www.jacob-foster.com">www.jacob-foster.com</a>
-          <span>|</span>
-          <span>phone on request</span>
+          <span className="hidden print:inline md:inline">|</span>
+          <span>Phone on request</span>
         </div>
         <div className="mt-4 font-bold">
           Full-Stack expert taking solutions from idea to reality, focusing on
