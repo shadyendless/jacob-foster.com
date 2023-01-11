@@ -116,7 +116,7 @@ function ResumePage() {
           rel="stylesheet"
         />
       </Head>
-      <div className="mx-auto mt-4 mb-6 w-full max-w-[44rem] font-ibm-plex-serif text-sm print:font-sans">
+      <div className="mx-auto mt-4 mb-6 w-full max-w-[44rem] px-3 font-ibm-plex-serif text-sm print:font-sans">
         <div className="text-center font-bold">Jacob Foster</div>
         <div className="flex items-center justify-center gap-x-2 text-xs">
           <a href="mailto:me@jacob-foster.com">me@jacob-foster.com</a>
@@ -135,7 +135,7 @@ function ResumePage() {
           ))}
         </ul>
         <div className="mt-4 font-bold">Key Qualifications</div>
-        <div className="mt-1 grid grid-cols-3 gap-x-6 text-xs leading-tight">
+        <div className="mt-1 grid grid-cols-2 gap-x-6 text-xs leading-tight md:grid-cols-3">
           {keyQualifications.map((keyQualification, index) => (
             <span key={`key-qualification-${index}`}>{keyQualification}</span>
           ))}
@@ -147,7 +147,7 @@ function ResumePage() {
           {employments.map((employment, index) => (
             <div key={`employment-${index}`} className="text-xs">
               <div className="leading-tight">
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col justify-between md:flex-row md:items-center">
                   <strong>{employment.position}</strong>
                   <span>
                     {employment.startDate} - {employment.endDate}
@@ -177,7 +177,7 @@ function ResumePage() {
         <div className="mt-1 flex flex-col gap-y-4">
           <div className="text-xs">
             <div className="leading-tight">
-              <div className="flex items-center justify-between">
+              <div className="flex flex-col justify-between md:flex-row md:items-center">
                 <strong>
                   Bachelor of Science in Software Engineering, Computers
                 </strong>
