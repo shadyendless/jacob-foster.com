@@ -102,7 +102,7 @@ export default function About() {
                 I began creating websites in Geocities before I became more
                 confident in my own abilities. Since then, I've worked as a game
                 programmer, application developer, integration expert, and CTO,
-                challening myself to learn new technologies, paradigms, and
+                challenging myself to learn new technologies, paradigms, and
                 techniques along the way.
               </p>
               {/* <p>
