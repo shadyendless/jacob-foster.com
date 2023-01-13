@@ -1,3 +1,4 @@
+import clsx from 'clsx';
 import Head from 'next/head';
 import { useEffect } from 'react';
 
@@ -7,7 +8,7 @@ type Employment = {
   location: string;
   position: string;
   responsibilities: string[];
-  selectAccomplishments: string;
+  highlightedProject: string;
   startDate: string;
 };
 
@@ -20,17 +21,20 @@ const highlights: string[] = [
 
 const keyQualifications: string[] = [
   `Project Management`,
-  `Concise Communication`,
-  `Training and Mentorship`,
-  `TypeScript and React`,
-  `Systems Integration`,
-  `Test-Driven Development`,
-  `Serverless Architecture`,
-  `Monorepo Development`,
+  `React`,
+  `TypeScript`,
+  `Tailwind CSS`,
+  `Next.js / Remix`,
+  `Laravel / ASP.NET`,
+  `SQL (Postgres, MySQL, SQLServer)`,
+  `NoSQL (MongoDB, DynamoDB)`,
+  `Redis`,
+  `Cloud-Native Development`,
   `Database Design`,
-  `Clean Code Principles`,
+  `Event-Driven Architectures`,
+  `Domain-Driven Design`,
   `CI/CD`,
-  `Event-Driven Architecture`,
+  `Serverless Development`,
 ];
 
 const employments: Employment[] = [
@@ -40,14 +44,14 @@ const employments: Employment[] = [
     location: `Bellevue, WA / Fukuoka, Japan (Remote)`,
     position: `Chief Technology Officer`,
     responsibilities: [
-      `Designed the interface for the current site as well as the new version in development and implemented it using styled-components and TailwindCSS`,
-      `Integrated with Mecab, a lexical analyzer for Japanese, to intelligently parse sentences and enhance them with additional data`,
-      `Architected a progression system that tracked what users understood, were struggling with, and what their tolerance was to provide an effective, burden-free learning experience`,
-      `Mentored junior developers and helped them to better understand JavaScript and React, as well as how to be more effective in their roles`,
-      `Maintained an active role in the Discord community to understand which parts of the system should be changed or what new features needed to be added to make learning Japanese easier and more effective`,
-      `Balanced student requests with requests from the content team to ensure that both parties were able to effectively accomplish their goals`,
+      `Crafted high-fidelity mockups for the student-facing site as well as the CMP in Figma and implemented them using styled-components and Tailwind CSS`,
+      `Integrated with system-level programs such as Mecab and FFMPEG via Node.js to analyze Japanese sentences, normalize and trim audio files, and stitch audio files together on demand`,
+      `Designed a proprietary system using numerous data points to ensure users do not forget what they have learned as well as show them new information only when they are ready for it`,
+      `Mentored junior developers and helped them to better understand JavaScript, TypeScript, and React, as well as how to be more confident and effective in their roles`,
+      `Maintained open channels with users, shareholders, and institutions to gather feedback, organize it into actionable items, and place those items into sprints`,
+      `Coordinated data production and consumption across multiple cloud services using Kafka, Amazon SNS/SQS, API Gateway, MongoDB Change Streams, and PostgreSQL subscriptions`,
     ],
-    selectAccomplishments: `Starting with a series of lessons written on the Teachable platform, I was able to architect and design an all-inclusive platform for people to learn actual Japanese. The system manages everything for users from ensuring they do not forget what they have already learned through to carefully showing them new content when they are ready for it. I also researched new technology to find ways to cut costs while providing enhanced experiences to our users. The last thing I did was re-create the site from the ground up on Remix, migrating everything from Elixir to TypeScript while also improving every aspect of the interface to address long-standing community issues.`,
+    highlightedProject: `NativShark is an all-in-one platform to teach people Japanese. Starting from zero, students can log in and simply press "Study Now", do what the system presents itself, and be done for the day. With our proprietary technology, we track everything they know, how it relates to what is coming up, and deliver a path that they automatically follow that teaches them at a pace unique to them.`,
     startDate: `August 2019`,
   },
   {
@@ -56,11 +60,12 @@ const employments: Employment[] = [
     location: `Fort Worth, Texas (Remote)`,
     position: `Software Developer`,
     responsibilities: [
-      `Implemented pixel-perfect designs across multiple devices in Magento, Wordpress, and ASP.NET`,
-      `Extended Magento to support custom functionality such as a custom checkout process which integrates with SheerID for identity verification and custom product builders`,
-      `Researched new technologies and patterns to solve complex problems for clients, including solutions that can run on highly secure government servers`,
+      `Converted mockups from designers into pixel-perfect custom themes for Wordpress and Magento in CSS`,
+      `Wrote custom extensions for Magento providing inventory management, custom course creation, and unique checkout flows`,
+      `Standardized a manual process of data collection and report generation by extracting key features of reports and creating a system which generated standardized, natural language PDF reports using C# and XPath analysis`,
+      `Increased the efficiency of background report generation and the amount of reports that could be handled via a proprietary report generation system and CRM`,
     ],
-    selectAccomplishments: `One of our clients was a government contract agency which wanted to consolidate its processes for generating background check reports across all of its different organizations. I was tasked with extracting common data and patterns out of existing background reports to generate a form which agents could fill out to generate accurate background reports, including handling edge cases to ensure that the English was grammatically correct. For another client I was tasked with creating a custom integration between Magento and Fishbowl to better manage their stock levels so that accurate inventory reports could be generated and overselling of products could be mitigated.`,
+    highlightedProject: `One of our clients was a government contract agency in charge of generating background reports for various government agencies. Each of these reports had different requirements in terms of their final design as well as the data that was required. I looked through hundreds of sample reports to generate standard formats for each of the report types and came up with an interface that agents could use in the field to easily and accurately input data.`,
     startDate: `October 2017`,
   },
   {
@@ -69,29 +74,26 @@ const employments: Employment[] = [
     location: `Provo, Utah (Remote)`,
     position: `Director of Design`,
     responsibilities: [
-      `Used Laravel and Wkhtmltopdf to create a generator which would take a user's input and generate PDFs which could be used to print cards for a language learning game`,
-      `Created a companion mobile application using React Native allowing customers to scan barcodes on cards to hear native audio of the words on the cards as well as learn additional information`,
-      `Prototyped a digital version of the game using React Native which allowed users to play the game on their phones or tablets`,
-      `Wrote blog posts and social media updates across Twitter and Instagram to promote the game, teach people Japanese, and help increase sales through brand visibility`,
-      `Designed posters and materials use at conventions to sell the game and promote the brand`,
-      `Attended conventions as a merchant in Utah, Maryland, and Washington to sell the game`,
+      `Architected a playing card generation system using Laravel which could generate custom, print-ready cards for Japanese: The Game`,
+      `Developed a companion application for Japanese: The Game using React Native which allowed players to scan cards for additional information`,
+      `Prototyped a digital version of Japanese: The Game to allow for easier playtesting and to allow for a more accessible version of the game`,
     ],
-    selectAccomplishments: `When I first joined Common Tongue, Inc, there was an issue with organization as well as easily creating new cards to be included in their main product: Japanese The Game. My first task was to streamline this process by creating a process in which cards could be generated by simply filling out a form. After that, I was tasked with overseeing social media and marketing efforts to increase brand awareness and sales as well as coming up with new business strategies. Through attending conventions and selling the game directly to customers, I was able to better understand what people wanted from the game, leading to a native mobile application allowing customers to scan the cards for more information.`,
+    highlightedProject: `Japanese: The Game is a card game that teaches people Japanese vocabulary and sentence structure. It was originally built using spreadsheets, scattered images, and Photoshop files for creating the cards. I took the data that was on each of the cards and built a system allowing cards to be generated based on the input data that could be immediately sent to print.`,
     startDate: `January 2015`,
   },
   {
     company: `UniverCity, Inc.`,
     endDate: `Present (Contractor)`,
     location: `Bowie, Maryland (Remote)`,
-    position: `Lead Engineer`,
+    position: `Lead Engineer / Contractor`,
     responsibilities: [
-      `Designed a 3D recreation of the University of Oregon and its surrounding area in Unity and C# which communicated with a backend server to provide business details and special deals for students`,
-      `Reverse-engineered the existing system from Java to Ruby on Rails after the previous engineer left the company and did not provide any details surrounding the codebase to avoid downtime`,
-      `Gathered requirements and built a system for companies to easily sell remaining products to interested merchants at bulk discounts in MongoDB and MeteorJS, including email and SMS campaigns`,
-      `Used Laravel and test-driven development to build a system that allows businesses to create interactive ads, promote events, and provide exclusive deals to local residents`,
-      `Architected a system for the government of Florida which allows health care professionals to easily submit and update their information so that patients can quickly find doctors which accept their insurance and provide necessary treatments`,
+      `Recreated the University of Oregon and its surrounding area in Unity3D and talked with an external API to retrieve data about businesses in the local area`,
+      `Reverse-engineered an existing Java API and rewrote it in Ruby on Rails using test-driven development and the strangler pattern to allow for a smooth transition from the old system to the new system`,
+      `Designed a B2B application that allows businesses to sell leftover products to interested buys in bulk at a discounted price using Meteor, React, MongoDB, and Twilio`,
+      `Wrote a B2C application using Laravel and React which allows community members to easily find events and deals with local businesses as well as allowing businesses to create events, deals, and coupons for their community`,
+      `Architected a system using Remix and React for the government of Florida which allows health care professionals to easily submit and update their information so that patients can quickly find doctors which accept their insurance and provide necessary treatments`,
     ],
-    selectAccomplishments: `I first started working for UniverCity, Inc when I was still in college and they needed someone who knew C# and Unity. My first job was coordinating with the existing engineer to dynamically retrieve data from a server to show students inside of the Unity application. When that engineer left, I was given full responsibility over the entire project and taught myself Ruby on Rails to reverse-engineer the existing Java system that was in place. From then I moved onto building entirely new systems to solve unique problems that businesses were facing from scratch, taking control of the projects from start to finish.`,
+    highlightedProject: `I was approached to build a system for the government of Florida to help simplify the process of finding a physician. The system has a complex authorization system which allows for one-directional account control and management, as well as auditing. Hospitals, HPCGs, and independent doctors can update their information such as accepted insurances, offered services, and areas of operation and patients can quickly filter this information and find the best physician for themselves.`,
     startDate: `February 2013`,
   },
 ];
@@ -116,7 +118,7 @@ function ResumePage() {
           rel="stylesheet"
         />
       </Head>
-      <div className="mx-auto mt-4 mb-6 w-full max-w-[44rem] px-3 font-ibm-plex-serif text-sm print:px-0 print:font-sans">
+      <div className="mx-auto mt-4 mb-6 w-full max-w-[44rem] px-3 font-ibm-plex-serif text-sm leading-snug print:px-0 print:font-sans">
         <div className="text-center font-bold">Jacob Foster</div>
         <div className="flex flex-wrap justify-center gap-x-2 text-center text-xs print:flex-row print:items-center md:flex-row md:items-center">
           <a href="mailto:me@jacob-foster.com">me@jacob-foster.com</a>
@@ -125,27 +127,35 @@ function ResumePage() {
           <span className="hidden print:inline md:inline">|</span>
           <span>Phone on request</span>
         </div>
-        <div className="mt-4 font-bold">
+        <div className="mt-2 font-bold print:hidden">
           Full-Stack expert taking solutions from idea to reality, focusing on
           developer and user experiences
         </div>
-        <ul className="mt-1 list-disc px-8 text-xs leading-snug">
+        <ul className="mt-1 list-disc px-8 text-xs leading-snug print:hidden">
           {highlights.map((highlight, index) => (
             <li key={`highlight-${index}`}>{highlight}</li>
           ))}
         </ul>
-        <div className="mt-4 font-bold">Key Qualifications</div>
-        <div className="mt-1 grid grid-cols-2 gap-x-6 text-xs leading-tight print:grid-cols-3 md:grid-cols-3">
+        <div className="mt-2 font-bold print:mt-0">Key Skills</div>
+        <div className="mt-0 grid grid-cols-2 gap-x-6 text-xs leading-tight print:grid-cols-3 md:grid-cols-3">
           {keyQualifications.map((keyQualification, index) => (
             <span key={`key-qualification-${index}`}>{keyQualification}</span>
           ))}
         </div>
-        <div className="mt-4 font-bold">
-          Professional Experience & Select Accomplishments
+        <div className="mt-2 font-bold">
+          Professional Experience & Highlighted Projects
         </div>
-        <div className="mt-1 flex flex-col gap-y-4">
+        <div className="mt-0 flex flex-col gap-y-3">
           {employments.map((employment, index) => (
-            <div key={`employment-${index}`} className="text-xs">
+            <div
+              key={`employment-${index}`}
+              className={clsx([
+                `text-xs`,
+                employment.company.includes('Common Tongue')
+                  ? 'print:hidden'
+                  : '',
+              ])}
+            >
               <div className="leading-tight">
                 <div className="flex flex-col justify-between print:flex-row print:items-center md:flex-row md:items-center">
                   <strong>{employment.position}</strong>
@@ -164,16 +174,16 @@ function ResumePage() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-1 font-bold italic">
-                Select Accomplishments:
+              <div className="mt-1 font-bold italic print:hidden">
+                Highlighted Project:
               </div>
-              <p className="leading-tight">
-                {employment.selectAccomplishments}
+              <p className="leading-tight print:hidden">
+                {employment.highlightedProject}
               </p>
             </div>
           ))}
         </div>
-        <div className="mt-4 font-bold">Education</div>
+        <div className="mt-2 font-bold">Education</div>
         <div className="mt-1 flex flex-col gap-y-4">
           <div className="text-xs">
             <div className="leading-tight">
