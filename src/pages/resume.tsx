@@ -20,21 +20,21 @@ const highlights: string[] = [
 ];
 
 const keyQualifications: string[] = [
-  `Project Management`,
-  `React`,
-  `TypeScript`,
-  `Tailwind CSS`,
+  `React / Vue`,
+  `TypeScript / JavaScript`,
+  `Tailwind / CSS`,
   `Next.js / Remix`,
   `Laravel / ASP.NET`,
+  `Kafka / Cloud PubSub`,
   `SQL (Postgres, MySQL, SQLServer)`,
   `NoSQL (MongoDB, DynamoDB)`,
-  `Redis`,
-  `Cloud-Native Development`,
-  `Database Design`,
-  `Event-Driven Architectures`,
-  `Domain-Driven Design`,
+  `Redis / Memcached`,
+  `REST / GraphQL`,
   `CI/CD`,
   `Serverless Development`,
+  `Event-Driven Architectures`,
+  `Domain-Driven Design`,
+  `Cloud-Native Development`,
 ];
 
 const employments: Employment[] = [
