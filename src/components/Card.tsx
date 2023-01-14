@@ -36,6 +36,7 @@ export function Card({
 
 interface CardLinkProps extends LinkProps {
   children: React.ReactNode;
+  target?: string;
 }
 
 Card.Link = function CardLink({ children, ...props }: CardLinkProps) {

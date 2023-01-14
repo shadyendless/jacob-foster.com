@@ -20,7 +20,7 @@ function usePrevious(value: any) {
 export default function App({ Component, pageProps, router }: AppProps) {
   let previousPathname = usePrevious(router.pathname);
 
-  if (Component.displayName === 'ResumePage') {
+  if (Component.displayName?.includes('ResumePage')) {
     return <Component />;
   }
 
