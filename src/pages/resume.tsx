@@ -38,7 +38,7 @@ export default function Resume() {
         <title>Resume - Jacob Foster</title>
         <meta
           name="description"
-          content="As a full-stack engineer with over 9 years of experience, I have intimate knowledge of the entire software development lifecycle. Check out my resumes to see what I can offer your team."
+          content="As a full-stack engineer with over 9 years of experience, I have intimate knowledge of the entire software development lifecycle, from UI design through to CI/CD pipelines and production support. Check out my resumes to see what I can offer your team."
         />
       </Head>
       <SimpleLayout
