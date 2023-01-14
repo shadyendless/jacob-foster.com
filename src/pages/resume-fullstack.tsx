@@ -13,7 +13,7 @@ type Employment = {
 };
 
 const highlights: string[] = [
-  `Over 9 years of full-stack development experience using frameworks such as ASP.NET, Laravel, Next.js, Remix, and Ruby on Rails.`,
+  `Over 9 years of full-stack development experience using frameworks such as Next.js, Remix, Laravel, and Ruby on Rails.`,
   `Designed database schemas, migrated data and schemas in production environments, and coordinated data synching between SQL and NoSQL databases.`,
   `Gathered feedback from users and turned it into actionable items to improve existing features or develop new features to enhance the user experience.`,
   `Managed CI/CD pipelines with Docker, GitHub Actions, AWS CDK, the Serverless Framework, and cloud build tools.`,
@@ -24,7 +24,7 @@ const keyQualifications: string[] = [
   `TypeScript / JavaScript`,
   `Tailwind / CSS`,
   `Next.js / Remix`,
-  `Laravel / ASP.NET`,
+  `Laravel / Ruby on Rails`,
   `Kafka / Cloud PubSub`,
   `SQL (Postgres, MySQL, SQLServer)`,
   `NoSQL (MongoDB, DynamoDB)`,
