@@ -42,7 +42,7 @@ const employments: Employment[] = [
     company: `NativShark, Inc.`,
     endDate: `December 2022`,
     location: `Bellevue, WA / Fukuoka, Japan (Remote)`,
-    position: `Chief Technology Officer`,
+    position: `Chief Technology Officer (Lead Fullstack Engineer)`,
     responsibilities: [
       `Crafted high-fidelity mockups for the student-facing site as well as the CMP in Figma and implemented them using styled-components and Tailwind CSS`,
       `Integrated with system-level programs such as Mecab and FFMPEG via Node.js to analyze Japanese sentences, normalize and trim audio files, and stitch audio files together on demand`,
@@ -60,10 +60,10 @@ const employments: Employment[] = [
     location: `Fort Worth, Texas (Remote)`,
     position: `Software Developer`,
     responsibilities: [
-      `Converted mockups from designers into pixel-perfect custom themes for Wordpress and Magento in CSS`,
       `Wrote custom extensions for Magento providing inventory management, custom course creation, and unique checkout flows`,
       `Standardized a manual process of data collection and report generation by extracting key features of reports and creating a system which generated standardized, natural language PDF reports using C# and XPath analysis`,
       `Increased the efficiency of background report generation and the amount of reports that could be handled via a proprietary report generation system and CRM`,
+      `Converted mockups from designers into pixel-perfect custom themes for Wordpress and Magento in CSS`,
     ],
     highlightedProject: `One of our clients was a government contract agency in charge of generating background reports for various government agencies. Each of these reports had different requirements in terms of their final design as well as the data that was required. I looked through hundreds of sample reports to generate standard formats for each of the report types and came up with an interface that agents could use in the field to easily and accurately input data.`,
     startDate: `October 2017`,
@@ -83,7 +83,7 @@ const employments: Employment[] = [
   },
   {
     company: `UniverCity, Inc.`,
-    endDate: `Present (Contractor)`,
+    endDate: `August 2019`,
     location: `Bowie, Maryland (Remote)`,
     position: `Lead Engineer / Contractor`,
     responsibilities: [
@@ -107,16 +107,6 @@ function FullstackResumePage() {
     <>
       <Head>
         <title>Fullstack Resume - Jacob Foster</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin=""
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=IBM+Plex+Serif:ital@0;1&display=swap"
-          rel="stylesheet"
-        />
       </Head>
       <div className="mx-auto mt-4 mb-6 w-full max-w-[44rem] px-3 font-ibm-plex-serif text-sm leading-snug print:px-0 print:font-sans">
         <div className="text-center font-bold">Jacob Foster</div>
@@ -142,7 +132,8 @@ function FullstackResumePage() {
             <span key={`key-qualification-${index}`}>{keyQualification}</span>
           ))}
         </div>
-        <div className="mt-2 flex flex-col gap-y-3">
+        <hr className="border-b-px mt-2 w-full border-black" />
+        <div className="mt-2 flex flex-col gap-y-2">
           {employments.map((employment, index) => (
             <div
               key={`employment-${index}`}
@@ -180,8 +171,8 @@ function FullstackResumePage() {
             </div>
           ))}
         </div>
-        <div className="mt-2 font-bold">Education</div>
-        <div className="mt-1 flex flex-col gap-y-4">
+        <hr className="border-b-px mt-2 w-full border-black" />
+        <div className="mt-1 flex flex-col gap-y-2">
           <div className="text-xs">
             <div className="leading-tight">
               <div className="flex flex-col justify-between print:flex-row print:items-center md:flex-row md:items-center">

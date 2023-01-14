@@ -111,7 +111,7 @@ function Resume() {
     },
     {
       company: 'UniverCity, Inc.',
-      title: 'Lead Engineer',
+      title: 'Lead Engineer / Contractor',
       logo: `https://source.boringavatars.com/marble/120/UniverCity,%20Inc?colors=F43F5E,EAB308,22C55E,3B82F6,A855F7`,
       start: '2013',
       end: '2019',

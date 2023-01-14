@@ -23,8 +23,8 @@ const keyQualifications: string[] = [
   `React / Vue`,
   `CSS / SCSS`,
   `JavaScript / TypeScript`,
-  `REST APIs`,
-  `GraphQL / Apollo`,
+  `REST APIs / GraphQL / Apollo`,
+  `MongoDB / Aggregation Pipelines`,
   `Axios / Fetch`,
   `Webpack / Babel / Vite`,
   `Redux / Mobx / Jotai`,
@@ -42,6 +42,7 @@ const employments: Employment[] = [
     position: `Chief Technology Officer (Lead Frontend Engineer)`,
     responsibilities: [
       `Crafted high-fidelity mockups for the student-facing site as well as the CMP in Figma and implemented them using styled-components and Tailwind CSS`,
+      `Wrote complex MongoDB aggregation pipelines which aggregated data and transactionally made bulk updates based on data from various collections`,
       `Communicated with a GraphQL API using Apollo Client as well as graphql-request to query and mutate data as well as to subscribe to real-time updates`,
       `Debugged and fixed cross-browser inconsistencies as well as progressively-enhanced the site to work on older browsers`,
       `Focused on performance by reducing the amount of renders using hooks such as useMemo and useCallback as well as siloing state to appropriate components`,
@@ -56,12 +57,12 @@ const employments: Employment[] = [
     location: `Fort Worth, Texas (Remote)`,
     position: `Software Developer`,
     responsibilities: [
-      `Converted mockups from designers into pixel-perfect custom themes for Wordpress and Magento in CSS`,
       `Implemented a complex, proprietary CRM using React which communicated with a REST API, focusing on efficient caching and state management`,
       `Took advantage of React Router and Redux to create a single-page application which allowed users to easily navigate between different pages without having to reload the entire application`,
       `Handled RBAC (role-based access control) and authorization using JWTs and restricted access to certain pages or functionality within pages based on the user's permissions`,
+      `Converted mockups from designers into pixel-perfect responsive websites using CSS`,
     ],
-    highlightedProject: `One of our clients was a government contract agency in charge of generating background reports for various government agencies. This application was to be used in a management setting as well as in the field to input the appropriate data. I took charge to ensure that the management data could be effectively filtered and easily understood as well as ensuring that the forms were mobile-friendly and responsive for quick in-the-field updates.`,
+    highlightedProject: `One of our clients was a government contract agency in charge of generating background reports for various government agencies. I took charge to ensure that the management data could be effectively filtered and easily understood as well as ensuring that the forms were mobile-friendly and responsive for quick in-the-field updates.`,
     startDate: `October 2017`,
   },
   {
@@ -70,7 +71,6 @@ const employments: Employment[] = [
     location: `Provo, Utah (Remote)`,
     position: `Director of Design`,
     responsibilities: [
-      `Designed and developed a custom WordPress theme for a client using HTML, CSS, and JavaScript`,
       `Developed a companion application for Japanese: The Game using React Native which communicated over the native bridge to interact with a barcode scanning library to allow cards to be scanned to hear audio and get additional information about them`,
       `Prototyped a digital version of Japanese: The Game in React Native that allowed users to play the game on their phone or tablet as well as allow us to quickly playtest new ideas or rulesets`,
     ],
@@ -79,16 +79,17 @@ const employments: Employment[] = [
   },
   {
     company: `UniverCity, Inc.`,
-    endDate: `Present (Contractor)`,
+    endDate: `August 2019`,
     location: `Bowie, Maryland (Remote)`,
     position: `Lead Engineer / Contractor`,
     responsibilities: [
       `Implemented a CMS as well as a user-facing application using React and MaterialUI, communicating with a REST API via Axios`,
+      `Designed a database schema in MongoDB for a B2C application which handled many models and relations, and deployed it to the cloud`,
       `Managed complex forms and state management to coordinate multi-step registration processes which used localStorage to allow users to save their progress and return later`,
       `Integrated Google Maps to allow businesses locations to be plotted on a map and filtered by distance and used their Info Window API to create branded popups that displayed additional information about the business`,
       `Created a multi-tiered admin panel using React, Tailwind, and the React Context API to allow multiple user types to manage data in the system based on the access that they are granted`,
     ],
-    highlightedProject: `I was approached to build a system for the government of Florida to help simplify the process of finding a physician. The system has complex, multi-step forms which change dynamically based on previous input. Using XState I was able to cleanly manage the state of each of the forms, ensure that navigation between steps could only occur when all of the prerequisites were met, and serialized that data to localStorage to enable the state machine to be re-instantiated upon returning to the site.`,
+    highlightedProject: `I was approached to build a system for the government of Florida to help simplify the process of finding a physician. The system has complex, multi-step forms which change dynamically based on previous input. Using XState I was able to cleanly manage the state of each of the forms, ensuring navigation between steps could only occur when all of the prerequisites were met, and serialized that data to localStorage to enable the state machine to be re-instantiated upon returning to the site.`,
     startDate: `February 2013`,
   },
 ];
@@ -102,16 +103,6 @@ function FrontendResumePage() {
     <>
       <Head>
         <title>Frontend Resume - Jacob Foster</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin=""
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=IBM+Plex+Serif:ital@0;1&display=swap"
-          rel="stylesheet"
-        />
       </Head>
       <div className="mx-auto mt-4 mb-6 w-full max-w-[44rem] px-3 font-ibm-plex-serif text-sm leading-snug print:my-0 print:px-0 print:font-sans">
         <div className="text-center font-bold">Jacob Foster</div>
@@ -137,7 +128,8 @@ function FrontendResumePage() {
             <span key={`key-qualification-${index}`}>{keyQualification}</span>
           ))}
         </div>
-        <div className="mt-2 flex flex-col gap-y-3">
+        <hr className="border-b-px mt-2 w-full border-black" />
+        <div className="mt-2 flex flex-col gap-y-2">
           {employments.map((employment, index) => (
             <div
               key={`employment-${index}`}
@@ -175,8 +167,8 @@ function FrontendResumePage() {
             </div>
           ))}
         </div>
-        <div className="mt-2 font-bold">Education</div>
-        <div className="mt-1 flex flex-col gap-y-4">
+        <hr className="border-b-px mt-2 w-full border-black" />
+        <div className="mt-1 flex flex-col gap-y-2">
           <div className="text-xs">
             <div className="leading-tight">
               <div className="flex flex-col justify-between print:flex-row print:items-center md:flex-row md:items-center">
