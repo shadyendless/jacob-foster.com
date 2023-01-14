@@ -132,9 +132,7 @@ function MobileNavigation(props: any) {
                 {/* <MobileNavItem href="/projects">Projects</MobileNavItem> */}
                 {/* <MobileNavItem href="/languages">Languages</MobileNavItem> */}
                 <MobileNavItem href="/skills">Skills</MobileNavItem>
-                <MobileNavItem href="/resume" target="_blank">
-                  Resume
-                </MobileNavItem>
+                <MobileNavItem href="/resume">Resume</MobileNavItem>
               </ul>
             </nav>
           </Popover.Panel>
@@ -176,9 +174,7 @@ function DesktopNavigation(
       <ul className="flex rounded-full bg-white/75 px-3 text-sm font-medium text-zinc-800 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur dark:bg-zinc-800/80 dark:text-zinc-200 dark:ring-white/10">
         <NavItem href="/about">About</NavItem>
         <NavItem href="/skills">Skills</NavItem>
-        <NavItem href="/resume" target="_blank">
-          Resume
-        </NavItem>
+        <NavItem href="/resume">Resume</NavItem>
         {/* <NavItem href="/articles">Articles</NavItem> */}
         {/* <NavItem href="/projects">Projects</NavItem> */}
         {/* <NavItem href="/languages">Languages</NavItem> */}

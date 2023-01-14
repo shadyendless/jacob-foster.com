@@ -23,7 +23,7 @@ interface SkillProps {
 function Skill({ title, href, children }: SkillProps) {
   return (
     <Card as="li">
-      <Card.Link target="_blank" href={href}>
+      <Card.Link target={href === '#' ? undefined : '_blank'} href={href}>
         <Card.Title as="h3">{title}</Card.Title>
         <Card.Description>{children}</Card.Description>
       </Card.Link>
