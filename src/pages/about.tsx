@@ -4,12 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Container } from '@/components/Container';
-import {
-  GitHubIcon,
-  InstagramIcon,
-  LinkedInIcon,
-  TwitterIcon,
-} from '@/components/SocialIcons';
+import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons';
 import portraitImage from '@/images/portrait.jpg';
 
 interface SocialLinkProps {
@@ -131,32 +126,12 @@ export default function About() {
                 <a className="site-link" href="mailto:me@jacob-foster.com">
                   via email
                 </a>{' '}
-                or on{' '}
-                <a
-                  className="site-link"
-                  href="https://www.twitter.com/im_jacobf"
-                >
-                  Twitter
-                </a>{' '}
                 and let's chat!
               </p>
             </div>
           </div>
           <div className="lg:pl-20">
             <ul role="list">
-              <SocialLink
-                href="https://www.twitter.com/im_jacobf"
-                icon={TwitterIcon}
-              >
-                Follow on Twitter
-              </SocialLink>
-              <SocialLink
-                href="https://www.instagram.com/shadyendless"
-                icon={InstagramIcon}
-                className="mt-4"
-              >
-                Follow on Instagram
-              </SocialLink>
               <SocialLink
                 href="https://www.github.com/shadyendless"
                 icon={GitHubIcon}

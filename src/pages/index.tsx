@@ -1,19 +1,13 @@
+import { Button } from '@/components/Button';
+import { Container } from '@/components/Container';
+import { GitHubIcon, LinkedInIcon } from '@/components/SocialIcons';
+import logoHypergiant from '@/images/logos/hypergiant.jpg';
+import logoNativShark from '@/images/logos/nativshark.png';
+import logoNutrien from '@/images/logos/nutrien.jpg';
+import Avatar from 'boring-avatars';
 import Head from 'next/head';
 import Image, { StaticImageData } from 'next/image';
 import Link, { type LinkProps } from 'next/link';
-
-import { Button } from '@/components/Button';
-import { Card } from '@/components/Card';
-import { Container } from '@/components/Container';
-import {
-  GitHubIcon,
-  InstagramIcon,
-  LinkedInIcon,
-  TwitterIcon,
-} from '@/components/SocialIcons';
-import logoNativShark from '@/images/logos/nativshark.png';
-import { formatDate } from '@/lib/formatDate';
-import { type Meta } from '@/types';
 
 function BriefcaseIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -38,34 +32,6 @@ function BriefcaseIcon(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-function ArrowDownIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 16 16" fill="none" aria-hidden="true" {...props}>
-      <path
-        d="M4.75 8.75 8 12.25m0 0 3.25-3.5M8 12.25v-8.5"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function Article({ article }: { article: Meta }) {
-  return (
-    <Card as="article">
-      <Card.Title href={`/articles/${article.slug}`}>
-        {article.title}
-      </Card.Title>
-      <Card.Eyebrow as="time" dateTime={article.date} decorate>
-        {formatDate(article.date)}
-      </Card.Eyebrow>
-      <Card.Description>{article.description}</Card.Description>
-      <Card.Cta>Read article</Card.Cta>
-    </Card>
-  );
-}
-
 interface SocialLinkProps extends LinkProps {
   icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
 }
@@ -80,41 +46,87 @@ function SocialLink({ icon: Icon, ...props }: SocialLinkProps) {
 
 type ResumeEntry = {
   company: string;
-  title: string;
-  logo: string | StaticImageData;
-  start: string;
   end: string;
-};
+  start: string;
+  title: string;
+} & (
+  | {
+      logo: StaticImageData;
+      placeholderLogo: false;
+    }
+  | {
+      logo: React.JSX.Element;
+      placeholderLogo: true;
+    }
+);
 
 function Resume() {
   let resume: ResumeEntry[] = [
     {
+      company: 'Hypergiant',
+      end: 'Present',
+      logo: logoHypergiant,
+      placeholderLogo: false,
+      start: '2023',
+      title: 'Engineering Manager',
+    },
+    {
+      company: 'Nutrien',
+      end: '2023',
+      logo: logoNutrien,
+      placeholderLogo: false,
+      start: '2023',
+      title: 'Senior Software Engineer',
+    },
+    {
       company: 'NativShark',
-      title: 'CTO',
-      logo: logoNativShark,
-      start: '2019',
       end: '2022',
+      logo: logoNativShark,
+      placeholderLogo: false,
+      start: '2019',
+      title: 'CTO',
     },
     {
       company: 'Stone Soup Solutions',
-      title: 'Software Developer',
-      logo: `https://source.boringavatars.com/marble/120/Stone%20Soup%20Solutions?colors=F43F5E,EAB308,22C55E,3B82F6,A855F7`,
-      start: '2017',
       end: '2019',
+      logo: (
+        <Avatar
+          name="Stone Soup Solutions"
+          variant="beam"
+          colors={['#F43F5E', '#EAB308', '#22C55E', '#3B82F6', '#A855F7']}
+        />
+      ),
+      placeholderLogo: true,
+      start: '2017',
+      title: 'Software Developer',
     },
     {
       company: 'Common Tongue, Inc.',
-      title: 'Director of Design',
-      logo: `https://source.boringavatars.com/marble/120/Common%20Tongue,%20Inc?colors=F43F5E,EAB308,22C55E,3B82F6,A855F7`,
-      start: '2015',
       end: '2017',
+      logo: (
+        <Avatar
+          name="Common Tongue, Inc."
+          variant="beam"
+          colors={['#F43F5E', '#EAB308', '#22C55E', '#3B82F6', '#A855F7']}
+        />
+      ),
+      placeholderLogo: true,
+      start: '2015',
+      title: 'Director of Design',
     },
     {
       company: 'UniverCity, Inc.',
-      title: 'Lead Engineer / Contractor',
-      logo: `https://source.boringavatars.com/marble/120/UniverCity,%20Inc?colors=F43F5E,EAB308,22C55E,3B82F6,A855F7`,
-      start: '2013',
       end: '2019',
+      logo: (
+        <Avatar
+          name="UniverCity, Inc."
+          variant="beam"
+          colors={['#F43F5E', '#EAB308', '#22C55E', '#3B82F6', '#A855F7']}
+        />
+      ),
+      placeholderLogo: true,
+      start: '2013',
+      title: 'Lead Engineer / Contractor',
     },
   ];
 
@@ -127,15 +139,19 @@ function Resume() {
       <ol className="mt-6 space-y-4">
         {resume.map((role, roleIndex) => (
           <li key={roleIndex} className="flex gap-4">
-            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-              <Image
-                src={role.logo}
-                alt=""
-                width="28"
-                height="28"
-                className="h-7 w-7 object-contain"
-                unoptimized
-              />
+            <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center overflow-hidden rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
+              {!role.placeholderLogo ? (
+                <Image
+                  src={role.logo}
+                  alt=""
+                  width="28"
+                  height="28"
+                  className="h-10 w-10 object-contain"
+                  unoptimized
+                />
+              ) : (
+                (role.logo as unknown as React.JSX.Element)
+              )}
             </div>
             <dl className="flex flex-auto flex-wrap gap-x-2">
               <dt className="sr-only">Company</dt>
@@ -161,13 +177,12 @@ function Resume() {
       </ol>
       <Button href="/resume" variant="secondary" className="group mt-6 w-full">
         View Resume
-        {/* <ArrowDownIcon className="h-4 w-4 stroke-zinc-400 transition group-active:stroke-zinc-600 dark:group-hover:stroke-zinc-50 dark:group-active:stroke-zinc-50" /> */}
       </Button>
     </div>
   );
 }
 
-export default function Home({ articles }: { articles: Meta[] }) {
+export default function Home() {
   return (
     <>
       <Head>
@@ -189,22 +204,11 @@ export default function Home({ articles }: { articles: Meta[] }) {
             developer and language enthusiast.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-            Hey there, I'm Jacob. I lived in Japan for 1.5 years and moved to
-            Reno in October, 2021. I am currently looking for opportunities
-            anywhere in the United States and am willing to relocate or work for
-            a fully remote team.
+            Hey there, I'm Jacob. I am focused on providing organizations and
+            engineering teams with impactful solutions and mentorship. Currently
+            interested in contract or consulting opportunities.
           </p>
           <div className="mt-6 flex gap-6">
-            <SocialLink
-              href="https://twitter.com/im_jacobf"
-              aria-label="Follow on Twitter"
-              icon={TwitterIcon}
-            />
-            <SocialLink
-              href="https://instagram.com/shadyendless"
-              aria-label="Follow on Instagram"
-              icon={InstagramIcon}
-            />
             <SocialLink
               href="https://github.com/shadyendless"
               aria-label="Follow on GitHub"
@@ -220,11 +224,6 @@ export default function Home({ articles }: { articles: Meta[] }) {
       </Container>
       <Container className="mt-24 md:mt-28">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-y-20 lg:max-w-none">
-          {/* <div className="flex flex-col gap-16">
-            {articles.map((article) => (
-              <Article key={article.slug} article={article} />
-            ))}
-          </div> */}
           <div className="space-y-10">
             <Resume />
           </div>
@@ -232,18 +231,4 @@ export default function Home({ articles }: { articles: Meta[] }) {
       </Container>
     </>
   );
-}
-
-export async function getStaticProps() {
-  if (process.env.NODE_ENV === 'production') {
-    // await generateRssFeed();
-  }
-
-  return {
-    props: {
-      // articles: (await getAllArticles())
-      //   .slice(0, 4)
-      //   .map(({ component, ...meta }) => meta),
-    },
-  };
 }
