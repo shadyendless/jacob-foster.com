@@ -151,7 +151,7 @@ function Resume() {
                   unoptimized
                 />
               ) : (
-                (role.logo as unknown as React.JSX.Element)
+                role.logo
               )}
             </div>
             <dl className="flex flex-auto flex-wrap gap-x-2">
