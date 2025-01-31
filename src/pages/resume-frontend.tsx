@@ -36,6 +36,35 @@ const keyQualifications: string[] = [
 
 const employments: Employment[] = [
   {
+    company: `Hypergiant`,
+    endDate: `Present`,
+    location: `Renton, WA (Remote)`,
+    position: `Engineering Manager`,
+    responsibilities: [
+      `Led a team of 7 engineers responsible for implementing Link16, a military tactical data link used by NATO`,
+      `Coordinated with external partners to drive cross-portfolio innovation to ensure we can maintain the required performance`,
+      `Talked with shareholders to extract key requirements and established priorities and timelines`,
+      `Worked closely with product managers to ensure that tasks were developed in the correct order`,
+      `Identified and helped to integrate new architectural patterns in the code base to accelerate the development team`,
+    ],
+    highlightedProject: `JERIC2O - a modern, cloud-enabled, tactical level command-and-control (C2) system designed for the U.S. government.`,
+    startDate: `June 2023`,
+  },
+  {
+    company: `Nutrien`,
+    endDate: `May 2023`,
+    location: `Reno, NV (Remote)`,
+    position: `Senior Software Engineer (Contract)`,
+    responsibilities: [
+      `Implemented high-fidelity Figma mockups in React Native using an in-house design system built on top of MUI`,
+      `Wrote an optimized shared state provider on top of Jotai to sync weather information across the application`,
+      `Coordinated with the backend team on the weather API to ensure that the requirements for the frontend were met`,
+      `Solved various bugs in the interface around the quirks of CSS in React Native`,
+    ],
+    highlightedProject: `Nutrien's iOS and Android app allowing farmers to manage their orders, fertilizer, and keep up with the weather.`,
+    startDate: `March 2023`,
+  },
+  {
     company: `NativShark, Inc.`,
     endDate: `December 2022`,
     location: `Bellevue, WA / Fukuoka, Japan (Remote)`,
