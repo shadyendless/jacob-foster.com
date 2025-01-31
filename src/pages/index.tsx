@@ -8,6 +8,7 @@ import Avatar from 'boring-avatars';
 import Head from 'next/head';
 import Image, { StaticImageData } from 'next/image';
 import Link, { type LinkProps } from 'next/link';
+import type { ReactElement } from 'react';
 
 function BriefcaseIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
@@ -55,7 +56,7 @@ type ResumeEntry = {
       placeholderLogo: false;
     }
   | {
-      logo: React.JSX.Element;
+      logo: ReactElement;
       placeholderLogo: true;
     }
 );
